@@ -24,11 +24,25 @@ window.onload = function() {
     { clase: "club", icon: "♣" },
     { clase: "spade", icon: "♠" }
   ];
-  icons.forEach(i => {
-    i.className += ` ${
-      symbols[Math.floor(Nramdon * symbols.length)].clase
-    } fs-1`;
-    i.textContent = ` ${symbols[Math.floor(Nramdon * symbols.length)].icon}`;
-  });
-  numberToShow.textContent = numbers[Math.floor(Nramdon * numbers.length)];
+  function loadCard(numeroAleatorio) {
+    icons.forEach(i => {
+      i.className = `icons ${
+        symbols[Math.floor(numeroAleatorio * symbols.length)].clase
+      } fs-1`;
+      i.textContent = ` ${
+        symbols[Math.floor(numeroAleatorio * symbols.length)].icon
+      }`;
+      console.log(i.className, i.textContent);
+    });
+    numberToShow.textContent =
+      numbers[Math.floor(numeroAleatorio * numbers.length)];
+  }
+  const changeCard = () => {
+    const rNumber = Math.random();
+    loadCard(rNumber);
+  };
+
+  loadCard(Nramdon);
+
+  button.addEventListener("click", changeCard);
 };

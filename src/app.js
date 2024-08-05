@@ -2,6 +2,9 @@ window.onload = function() {
   const icons = document.querySelectorAll(".icons");
   const numberToShow = document.querySelector(".numberToShow");
   const button = document.querySelector("#button");
+  const altura = document.getElementById("altura");
+  const ancho = document.getElementById("ancho");
+  const main = document.getElementById("main");
   const Nramdon = Math.random();
   const numbers = [
     "2",
@@ -41,6 +44,20 @@ window.onload = function() {
     const rNumber = Math.random();
     loadCard(rNumber);
   };
+
+  const handleInputAncho = e => {
+    main.style.width = `${e.target.value}px`;
+  };
+
+  const handleInputAltura = e => {
+    main.classList.remove("w-75");
+    main.style.height = `${e.target.value}px`;
+  };
+
+  ancho.addEventListener("input", handleInputAncho);
+  altura.addEventListener("input", handleInputAltura);
+
+  const changeCardTenSeconds = setInterval(changeCard, 10000);
 
   loadCard(Nramdon);
 

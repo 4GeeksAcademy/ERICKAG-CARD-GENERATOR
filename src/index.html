@@ -12,12 +12,37 @@
   </head>
 
   <body class="w-100" style="height: 100%;">
+    <div class="container mt-5">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="altura">Altura</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="altura"
+              placeholder="Altura"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="ancho">Ancho</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="ancho"
+              placeholder="Ancho"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
     <div
       class="d-flex w-25 bg-success mx-auto my-3 flex-column justify-content-center align-items-center p-3 rounded"
       id="card"
       style="height:500px;"
     >
-      <div class="bg-light w-75 rounded p-2" style="height: 90%;">
+      <div class="bg-light w-75 rounded p-2" style="height: 90%;" id="main">
         <div class="w-100 d-flex" style="height: 30%;">
           <i class="icons"></i>
         </div>
